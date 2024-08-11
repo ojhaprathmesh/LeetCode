@@ -3,8 +3,9 @@ package com.company;
 public class _2678_Number_of_Senior_Citizens {
     public int countSeniors(String[] details) {
         int count = 0;
-        for (int i = 0; i < details.length; i++) {
-            if (Integer.parseInt(details[i].substring(11, 13)) > 60) {
+        for (String detail : details) {
+            int age = (detail.charAt(11) - '0') * 10 + (detail.charAt(12) - '0');
+            if (age > 60) {
                 count++;
             }
         }
