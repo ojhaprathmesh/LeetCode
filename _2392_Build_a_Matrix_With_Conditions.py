@@ -3,8 +3,9 @@ from typing import List
 
 
 class Solution:
-    def buildMatrix(self, k: int, rowConditions: List[List[int]], colConditions: List[List[int]]) -> List[List[int]]:
-        def topological_sort(k: int, conditions: List[List[int]]) -> List[int]:
+    @staticmethod
+    def buildMatrix(k: int, rowConditions: list[list[int]], colConditions: list[list[int]]) -> List[List[int]]:
+        def topological_sort(conditions: list[list[int]]) -> list[int]:
             graph = defaultdict(list)
             in_degree = [0] * (k + 1)
 
@@ -25,8 +26,8 @@ class Solution:
 
             return order if len(order) == k else []
 
-        row_order = topological_sort(k, rowConditions)
-        col_order = topological_sort(k, colConditions)
+        row_order = topological_sort(rowConditions)
+        col_order = topological_sort(colConditions)
 
         if not row_order or not col_order:
             return []
@@ -43,5 +44,5 @@ class Solution:
 
 obj = Solution()
 
-matrix = obj.buildMatrix(3, [[1, 2], [3, 2]], [[2, 1], [3, 2]])
-print(matrix)
+result = obj.buildMatrix(3, [[1, 2], [3, 2]], [[2, 1], [3, 2]])
+print(result)
