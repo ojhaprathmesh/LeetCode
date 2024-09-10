@@ -4,6 +4,6 @@
     <option name="sdkName" value="Python 3.12" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="22" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/../../University/Semester-3/Java 2024/Codes/out" />
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
